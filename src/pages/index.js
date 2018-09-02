@@ -1,13 +1,26 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import Container from '../components/container'
+import Content from '../components/content'
+import BackgroundTitle from '../components/backgroundTitle'
+import Header from '../components/header'
+import './styles.css'
 
-const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </div>
-)
+class IndexPage extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Header />
+        <Container render={sections => sections.map((section, index) => (
+          <div key={index} className="section container">
+            <BackgroundTitle text={section.title} />
+            {section.content.map((content, index) =>
+              <Content key={index} {...content} usePatternBacking={index % 2 === 1} />
+            )}
+          </div>
+        ))} />
+      </React.Fragment>
+    )
+  }
+}
 
 export default IndexPage

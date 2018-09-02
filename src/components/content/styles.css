@@ -1,0 +1,13 @@
+.content.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 30em;
+  padding: 3em;
+}
+
+.content.pattern {
+  background-image: url('/icons/cross.svg'), url('/icons/cross.svg');
+  background-size: 1em;
+  background-position: 0.5em 0.5em, 0 0;
+}
