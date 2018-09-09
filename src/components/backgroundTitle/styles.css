@@ -13,5 +13,6 @@
 
 .background .text {
   font-size: 10em;
-  color: var(--gray70);
+  font-family: var(--font-bold);
+  color: var(--gray95);
 }

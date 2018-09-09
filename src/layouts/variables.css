@@ -6,4 +6,7 @@
   --gray50: hsla(0, 0%, 50%, 1);
   --gray70: hsla(0, 0%, 70%, 1);
   --gray95: hsla(0, 0%, 95%, 1);
+  --font-norm: Avenir;
+  --font-bold: Avenir-Black;
+  --font-size-header: 3em;
 }
