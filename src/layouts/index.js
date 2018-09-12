@@ -1,8 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import { ThemeProvider } from 'styled-components'
+import './globalStyles'
 
-import './index.css'
+const theme = {
+  gray10: 'hsla(0, 0%, 10%, 1)',
+  gray30: 'hsla(0, 0%, 30%, 1)',
+  gray50: 'hsla(0, 0%, 50%, 1)',
+  gray70: 'hsla(0, 0%, 70%, 1)',
+  gray95: 'hsla(0, 0%, 95%, 1)',
+  header: {
+    fontFamily: 'Avenir-Black',
+    fontSize: '3em',
+  },
+  text: {
+    fontFamily: 'Avenir',
+  }
+}
 
 const Layout = ({ children, data }) => (
   <React.Fragment>
@@ -13,7 +28,9 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'portfolio, CS' },
       ]}
     />
-    {children()}
+    <ThemeProvider theme={theme}>
+      {children()}
+    </ThemeProvider>
   </React.Fragment>
 )
 

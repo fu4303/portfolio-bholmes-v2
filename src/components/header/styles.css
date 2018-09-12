@@ -1,9 +1,0 @@
-@import "../../layouts/variables.css";
-.header.container {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background: var(--gray10);
-  box-shadow: 0 0 2em var(--gray10), 0 5em 0 var(--gray50), 0 5em 2em var(--gray50);
-  margin-bottom: 5em;
-}

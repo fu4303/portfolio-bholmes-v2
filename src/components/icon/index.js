@@ -1,39 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import iconData from './icon-data'
-import './styles.css'
-
-const initialState = {
-  fill: "hsla(0, 0%, 50%, 1)",
-}
+import styled from 'styled-components'
 
 const defaultSize = "1.5em"
 
-class Icon extends React.Component {
-  constructor() {
-    super()
-    this.state = initialState
-  }
-  onMouseEnter = () => {
-    this.setState({
-      fill: iconData[this.props.name].color,
-    })
-  }
-  onMouseLeave = () => {
-    this.setState(initialState)
-  }
-  render() {
-    const { name, href, size } = this.props
-    const { viewBox, render } = iconData[name] || {}
-    return (
-      <a href={href} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>
-        <svg xmlns="http://www.w3.org/2000/svg" className="icon container" viewBox={viewBox} fill={(() => this.state.fill)()}
-          height={size || defaultSize} width={size || defaultSize}>
-          {render}
-        </svg>
-      </a>
-    )
-  }
+const Styled = {
+  Svg: styled.svg`
+    fill: ${props => props.theme.gray50};
+    transition: fill 0.2s;
+    margin: 0.2em;
+    &:hover {
+      fill: ${props => props.fill};
+    }
+  `
+}
+
+const Icon = ({ name, href, size }) => {
+  const { viewBox, render, color } = iconData[name] || {}
+  return (
+    <a href={href}>
+      <Styled.Svg viewBox={viewBox} fill={color} height={size || defaultSize} width={size || defaultSize}>
+        {render}
+      </Styled.Svg>
+    </a>
+  )
 }
 
 Icon.propTypes = {

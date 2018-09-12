@@ -6,16 +6,16 @@ module.exports = [
     content: [{
       title: 'Snag',
       summary: (
-        <p>
-          My summer spent with the Snag team brought an interesting blend of old codebases, Mario Kart, modern backend practices with C#,
+        <React.Fragment>
+          My summer spent with the Snag team brought an interesting blend of old codebases, Mario Kart, modern backend practices with <b>C#</b>,
           and countless dodged Nerf bullets. Fellow intern <a href="https://www.linkedin.com/in/medenzon/">Michael Edenzon</a> and I were
-          given a single task: rewrite the company’s employee assessment portal in a DotNet Core + SQL application. This added a level of
+          given a single task: rewrite the company’s employee assessment portal in a <b>DotNet Core + SQL</b> application. This added a level of
           creative independence most software internships miss, allowing us to write a new application from the ground up.
-        </p>
+        </React.Fragment>
       ),
       colors: {
-        primary: '#270DEA',
-        secondary: '#3C8FFF',
+        primary: '#6916CB',
+        secondary: '#73ADFD',
       },
       links: [{
         href: 'https://www.snagajob.com/about/',
@@ -28,9 +28,9 @@ module.exports = [
     {
       title: 'Good Done Great',
       summary: (
-        <p>
+        <React.Fragment>
           My first time diving into JavaScript and frontend development practices.
-          </p>
+        </React.Fragment>
       ),
       colors: {
         primary: '#3C8FFF',
