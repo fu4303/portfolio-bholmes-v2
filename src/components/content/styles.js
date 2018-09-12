@@ -40,11 +40,15 @@ export default {
   Summary: styled.p`
     color: ${props => props.theme.gray10};
     & > b {
-      color: ${props => props.color};
+      color: ${props => props.colors.primary};
     }
     & > a {
-      text-decoration: none;
-      color: ${props => props.color};
+      text-decoration-style: dotted;
+      color: ${props => props.colors.primary};
+      transition: color 0.3s;
+      &:hover {
+        color: ${props => props.colors.secondary};
+      }
     }
   `
 }

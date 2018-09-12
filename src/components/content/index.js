@@ -16,7 +16,7 @@ class Content extends React.Component {
             ))}
             <Styled.GradientLine rightAlign={usePatternBacking} colors={colors} />
           </Styled.LinkContainer>
-          <Styled.Summary color={colors.primary}>
+          <Styled.Summary colors={colors}>
             {summary}
           </Styled.Summary>
         </Styled.TextContainer>
