@@ -21,11 +21,12 @@ export default {
     color: ${props => props.color};
     font-family: ${props => props.theme.header.fontFamily};
     font-size: ${props => props.theme.header.fontSize};
+    margin: 20px 0;
   `,
   TextContainer: styled.div`
     max-width: 600px;
     margin: 3em 0;
-    ${props => props.rightAlign && 'text-align: right;'}
+    ${props => props.rightAlign && css`text-align: right;`}
   `,
   LinkContainer: styled.div`
     display: flex;
@@ -34,7 +35,7 @@ export default {
   GradientLine: styled.div`
     background: linear-gradient(${props => `${props.rightAlign ? '270deg' : '90deg'}, ${props.colors.primary}, ${props.colors.secondary}`});
     height: 5px;
-    margin-left: 1em;
+    ${props => props.rightAlign ? css`margin-left: 1em` : css`margin-right: 1em`};
     flex: 1;
   `,
   Summary: styled.p`

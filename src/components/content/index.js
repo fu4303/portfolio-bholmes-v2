@@ -11,10 +11,11 @@ class Content extends React.Component {
         <Styled.TextContainer rightAlign={usePatternBacking}>
           <Styled.Header color={colors.primary}>{title}</Styled.Header>
           <Styled.LinkContainer>
+            {!usePatternBacking && <Styled.GradientLine rightAlign={usePatternBacking} colors={colors} />}
             {links.map((link, index) => (
               <Icon key={index} name={link.icon} href={link.href} />
             ))}
-            <Styled.GradientLine rightAlign={usePatternBacking} colors={colors} />
+            {usePatternBacking && <Styled.GradientLine rightAlign={usePatternBacking} colors={colors} />}
           </Styled.LinkContainer>
           <Styled.Summary colors={colors}>
             {summary}
