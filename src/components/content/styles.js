@@ -35,7 +35,7 @@ export default {
   GradientLine: styled.div`
     background: linear-gradient(${props => `${props.rightAlign ? '270deg' : '90deg'}, ${props.colors.primary}, ${props.colors.secondary}`});
     height: 5px;
-    ${props => props.rightAlign ? css`margin-left: 1em` : css`margin-right: 1em`};
+    ${props => props.rightAlign ? css`margin-left: 1em;` : css`margin-right: 1em;`}
     flex: 1;
   `,
   Summary: styled.p`

@@ -25,9 +25,9 @@ const Styled = {
 
 const Header = ({ }) => (
   <Styled.Container>
-    <Brushstroke frame={600}>
+    {/* <Brushstroke frame={600}>
       <Styled.Content />
-    </Brushstroke>
+    </Brushstroke> */}
   </Styled.Container>
 )
 
