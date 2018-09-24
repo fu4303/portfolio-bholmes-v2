@@ -16,7 +16,7 @@ const theme = {
     fontSize: '3em',
   },
   headerOblique: {
-    fontFamily: 'Avenir-MediumOblique',
+    fontFamily: 'Avenir-Oblique',
     fontSize: '2em',
   },
   text: {

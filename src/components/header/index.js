@@ -31,10 +31,6 @@ const Styled = {
     width: 100%;
     max-width: 80vh;
     z-index: 1;
-  `,
-  Img: styled(Img)`
-    height: 90%;
-    width: 90%;
     animation: sketch-anim 1s ease-out forwards;
 
     @keyframes sketch-anim {
@@ -47,6 +43,10 @@ const Styled = {
         opacity: 1;
       }
     },
+  `,
+  Img: styled(Img)`
+    height: 90%;
+    width: 90%;
   `,
   Name: styled.img`
     width: 100%;
@@ -73,7 +73,6 @@ const Styled = {
   MissionStatement: styled.h1`
     font-size: ${props => props.theme.headerOblique.fontSize};
     font-family: ${props => props.theme.headerOblique.fontFamily};
-    font-style: italic;
     font-weight: normal;
     margin-bottom: 2em;
     color: ${props => props.theme.gray70};

@@ -21,6 +21,11 @@ injectGlobal`
   src: url("/fonts/Avenir-Medium.ttf");
   }
 
+  @font-face {
+  font-family: Avenir-Oblique;
+  src: url("/fonts/Avenir-MediumOblique.ttf");
+  }
+
   * {
   box-sizing: border-box;
   }
