@@ -10,13 +10,18 @@ const theme = {
   gray50: 'hsla(0, 0%, 50%, 1)',
   gray70: 'hsla(0, 0%, 70%, 1)',
   gray95: 'hsla(0, 0%, 95%, 1)',
+  mint: '#2BFF88',
   header: {
     fontFamily: 'Avenir-Black',
     fontSize: '3em',
   },
+  headerOblique: {
+    fontFamily: 'Avenir-MediumOblique',
+    fontSize: '2em',
+  },
   text: {
     fontFamily: 'Avenir',
-  }
+  },
 }
 
 const Layout = ({ children, data }) => (

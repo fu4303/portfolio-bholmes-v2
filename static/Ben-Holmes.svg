@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 757 491">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #2bff88;
+        stroke-width: 5px;
+        font-size: 200px;
+        font-family: Avenir-Black, Avenir;
+        font-weight: 800;
+      }
+    </style>
+  </defs>
+  <text id="Ben_Holmes" data-name="Ben
+Holmes" class="cls-1" transform="translate(5 5)"><tspan x="0" y="200">Ben</tspan><tspan x="0" y="400">Holmes</tspan></text>
+</svg>
