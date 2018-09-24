@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 import Icon from '../../components/icon'
 import MoreButton from './moreButton'
 
@@ -31,7 +32,7 @@ const Styled = {
     max-width: 80vh;
     z-index: 1;
   `,
-  Img: styled.img`
+  Img: styled(Img)`
     height: 90%;
     width: 90%;
     animation: sketch-anim 1s ease-out forwards;
@@ -100,11 +101,11 @@ const links = [
   }
 ]
 
-const Header = ({ }) => (
+const Header = ({ data }) => (
   <Styled.Container>
     <Styled.Background>
       <Styled.ImgContainer>
-        <Styled.Img src="/profile-sketch-dark.png" alt="Ben Holmes self portrait (hand sketch)" />
+        <Styled.Img sizes={data.profileImage.childImageSharp.sizes} alt="Ben Holmes self portrait (hand sketch)" />
       </Styled.ImgContainer>
     </Styled.Background>
     <Styled.Title>
@@ -121,3 +122,15 @@ const Header = ({ }) => (
 )
 
 export default Header
+
+export const query = graphql`
+  fragment HeaderFragment on RootQueryType {
+    profileImage: file(relativePath: { eq: "profile-sketch-dark.png" }) {
+      childImageSharp {
+        sizes(maxWidth: 1000) {
+          ...GatsbyImageSharpSizes_tracedSVG
+        }
+      }
+    }
+  }
+`

@@ -15,7 +15,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
+        <Header data={this.props.data} />
         <Container render={sections => sections.map((section, index) => (
           <Styled.SectionContainer key={index}>
             <BackgroundTitle text={section.title} />
@@ -30,3 +30,9 @@ class IndexPage extends React.Component {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query IndexPageQuery {
+    ...HeaderFragment
+  }
+`
