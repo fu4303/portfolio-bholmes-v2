@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import Icon from '../../components/icon'
+import Name from './name'
 import MoreButton from './moreButton'
 
 const Styled = {
@@ -10,7 +11,7 @@ const Styled = {
     min-height: 100vh;
     position: relative;
     background: ${props => props.theme.gray10};
-    box-shadow: 0 0 2em ${props => props.theme.gray10}, 0 5em 0 ${props => props.theme.gray50}, 0 5em 2em ${props => props.theme.gray50};
+    box-shadow: 0 0 2em ${props => props.theme.gray10};
     padding: 0 10%;
     padding-bottom: 5em;
 
@@ -18,6 +19,7 @@ const Styled = {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
   `,
   Background: styled.div`
     position: absolute;
@@ -30,8 +32,9 @@ const Styled = {
     background-position: bottom;
     width: 100%;
     max-width: 80vh;
-    z-index: 1;
+    opacity: 0;
     animation: sketch-anim 1s ease-out forwards;
+    animation-delay: 1.5s;
 
     @keyframes sketch-anim {
       from {
@@ -48,27 +51,36 @@ const Styled = {
     height: 90%;
     width: 90%;
   `,
-  Name: styled.img`
+  Name: styled(Name)`
     width: 100%;
     align-self: flex-end;
-    animation: fade 2s ease-out forwards;
-    display: inline-block;
-
-    @keyframes fade {
-      from { opacity: 0 }
-      to { opacity: 1 }
-    }
+    z-index: 1;
   `,
   Title: styled.section`
     height: 100vh;
-    width: 50%;
-    min-width: 50vh;
+    max-height: calc(1.5 * 100vw);
+    width: 50vh;
+    max-width: 100vw;
     display: flex;
     align-items: flex-end;
   `,
   Content: styled.section`
     max-width: 25em;
     position: relative;
+    opacity: 0;
+    animation: fade 1s ease-out forwards;
+    animation-delay: 1.5s;
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   `,
   MissionStatement: styled.h1`
     font-size: ${props => props.theme.headerOblique.fontSize};

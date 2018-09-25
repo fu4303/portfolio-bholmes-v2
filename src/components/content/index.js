@@ -5,19 +5,19 @@ import Styled from './styles'
 
 class Content extends React.Component {
   render() {
-    const { title, summary, links, colors, usePatternBacking } = this.props
+    const { title, summary, links, colors, usePatternBacking, textColor } = this.props
     return (
       <Styled.Container usePatternBacking={usePatternBacking}>
         <Styled.TextContainer rightAlign={usePatternBacking}>
           <Styled.Header color={colors.primary}>{title}</Styled.Header>
           <Styled.LinkContainer>
             {!usePatternBacking && <Styled.GradientLine rightAlign={usePatternBacking} colors={colors} />}
-            {links.map((link, index) => (
+            {links && links.map((link, index) => (
               <Icon key={index} name={link.icon} href={link.href} />
             ))}
             {usePatternBacking && <Styled.GradientLine rightAlign={usePatternBacking} colors={colors} />}
           </Styled.LinkContainer>
-          <Styled.Summary colors={colors}>
+          <Styled.Summary colors={colors} textColor={textColor}>
             {summary}
           </Styled.Summary>
         </Styled.TextContainer>
@@ -32,6 +32,7 @@ Content.propTypes = {
   links: PropTypes.array.isRequired,
   colors: PropTypes.object.isRequired,
   usePatternBacking: PropTypes.bool,
+  textColor: PropTypes.string,
 }
 
 export default Content

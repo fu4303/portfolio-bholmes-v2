@@ -3,11 +3,14 @@ import Container from '../components/container'
 import Content from '../components/content'
 import BackgroundTitle from '../components/backgroundTitle'
 import Header from '../components/header'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Styled = {
   SectionContainer: styled.div`
     position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    ${props => props.backingColor && css`background-color: ${props.backingColor};`}
   `
 }
 
@@ -17,10 +20,10 @@ class IndexPage extends React.Component {
       <React.Fragment>
         <Header data={this.props.data} />
         <Container render={sections => sections.map((section, index) => (
-          <Styled.SectionContainer key={index}>
+          <Styled.SectionContainer key={index} backingColor={section.backingColor}>
             <BackgroundTitle text={section.title} />
             {section.content.map((content, index) =>
-              <Content key={index} {...content} usePatternBacking={index % 2 === 1} />
+              <Content key={index} {...content} usePatternBacking={index % 2 === 1} textColor={section.textColor} />
             )}
           </Styled.SectionContainer>
         ))} />

@@ -13,7 +13,7 @@ const theme = {
   mint: '#2BFF88',
   header: {
     fontFamily: 'Avenir-Black',
-    fontSize: '3em',
+    fontSize: '2.5em',
   },
   headerOblique: {
     fontFamily: 'Avenir-Oblique',

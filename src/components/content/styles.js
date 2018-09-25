@@ -11,8 +11,7 @@ export default {
     position: relative;
     width: 100%;
     height: auto;
-    max-height: 30em;
-    padding: 3em;
+    padding: 0 5%;
     display: flex;
     justify-content: center;
     ${props => props.usePatternBacking && pattern};
@@ -39,7 +38,7 @@ export default {
     flex: 1;
   `,
   Summary: styled.p`
-    color: ${props => props.theme.gray10};
+    color: ${props => props.textColor ? props.textColor : props.theme.gray10};
     & > b {
       color: ${props => props.colors.primary};
     }

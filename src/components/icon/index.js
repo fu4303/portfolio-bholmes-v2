@@ -28,6 +28,7 @@ Styled.Link = styled.a`
   text-decoration: none;
   display: flex;
   align-items: center;
+  margin: 0 0.5em;
   &:hover ${Styled.Svg} {
     fill: ${props => props.color};
   }

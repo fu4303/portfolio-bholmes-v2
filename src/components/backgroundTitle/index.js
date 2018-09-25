@@ -17,7 +17,7 @@ const Styled = {
   Text: styled.h1`
     font-size: 10em;
     font-family: ${props => props.theme.header.fontFamily};
-    color: ${props => props.theme.gray95};
+    color: hsla(0, 0%, 0%, 0.05);
   `
 }
 
