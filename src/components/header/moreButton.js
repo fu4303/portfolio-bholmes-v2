@@ -9,7 +9,7 @@ const Styled = {
     display: flex;
     align-items: center;
     font-size: inherit;
-    cursor: pointer;
+    
   `,
   Text: styled.span`
     font-size: 1.8em;
@@ -33,7 +33,7 @@ const Styled = {
 }
 
 const MoreButton = ({ children }) => (
-  <Styled.Button>
+  <Styled.Button disabled={true}>
     <Styled.Icon name="arrowDownCallToAction" initialColor="mint" size="4em" />
     <Styled.Text>
       {children}

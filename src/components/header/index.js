@@ -24,6 +24,7 @@ const Styled = {
   Background: styled.div`
     position: absolute;
     top: 0; left: 10%; right: 0; bottom: 0;
+    overflow: hidden;
   `,
   ImgContainer: styled.div`
     background-image: url("/brush-stroke-mint.png");
@@ -32,6 +33,7 @@ const Styled = {
     background-position: bottom;
     width: 100%;
     max-width: 80vh;
+    overflow: hidden;
     opacity: 0;
     animation: sketch-anim 1s ease-out forwards;
     animation-delay: 1.5s;
@@ -45,7 +47,7 @@ const Styled = {
         transform: rotate(-5deg);
         opacity: 1;
       }
-    },
+    };
   `,
   Img: styled(Img)`
     height: 90%;
@@ -120,7 +122,7 @@ const Header = ({ data }) => (
       </Styled.ImgContainer>
     </Styled.Background>
     <Styled.Title>
-      <Styled.Name src="/Ben-Holmes.svg" alt="Name banner" />
+      <Styled.Name />
     </Styled.Title>
     <Styled.Content>
       <Styled.MissionStatement>A student developer with a passion for the web.</Styled.MissionStatement>

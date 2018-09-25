@@ -23,7 +23,7 @@ class IndexPage extends React.Component {
           <Styled.SectionContainer key={index} backingColor={section.backingColor}>
             <BackgroundTitle text={section.title} />
             {section.content.map((content, index) =>
-              <Content key={index} {...content} usePatternBacking={index % 2 === 1} textColor={section.textColor} />
+              <Content data={this.props.data} key={index} {...content} usePatternBacking={index % 2 === 1} textColor={section.textColor} />
             )}
           </Styled.SectionContainer>
         ))} />
@@ -36,6 +36,7 @@ export default IndexPage
 
 export const query = graphql`
   query IndexPageQuery {
-    ...HeaderFragment
+    ...HeaderFragment,
+    ...ContentFragment,
   }
 `

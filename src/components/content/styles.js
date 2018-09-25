@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import Img from 'gatsby-image'
 
 const pattern = css`
   background-image: url('/icons/cross.svg'), url('/icons/cross.svg');
@@ -14,6 +15,8 @@ export default {
     padding: 0 5%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     ${props => props.usePatternBacking && pattern};
   `,
   Header: styled.h1`
@@ -21,6 +24,11 @@ export default {
     font-family: ${props => props.theme.header.fontFamily};
     font-size: ${props => props.theme.header.fontSize};
     margin: 20px 0;
+  `,
+  Img: styled(Img)`
+    width: 400px;
+    max-width: 100%;
+    margin: 3em;
   `,
   TextContainer: styled.div`
     max-width: 600px;
