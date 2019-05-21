@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import Icon from '../../components/icon'
 import Name from './name'
 import MoreButton from './moreButton'
-import { graphql } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 const Styled = {
   Container: styled.div`
@@ -118,48 +118,51 @@ const links = [
   },
 ]
 
-const Header = ({ data }) => (
-  <Styled.Container>
-    <Styled.Background>
-      <Styled.ImgContainer>
-        <Styled.Img
-          sizes={data.file.childImageSharp.sizes}
-          alt="Ben Holmes self portrait (hand sketch)"
-        />
-      </Styled.ImgContainer>
-    </Styled.Background>
-    <Styled.Title>
-      <Styled.Name />
-    </Styled.Title>
-    <Styled.Content>
-      <Styled.MissionStatement>
-        A student developer with a passion for the web.
-      </Styled.MissionStatement>
-      {links.map((link, index) => (
-        <Styled.Icon
-          key={index}
-          href={link.href}
-          name={link.name}
-          text={link.text}
-          initialColor="gray95"
-          size="2em"
-        />
-      ))}
-      <MoreButton>More about me</MoreButton>
-    </Styled.Content>
-  </Styled.Container>
+const Header = () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        profilePic: file(relativePath: { eq: "profile-sketch-dark.png" }) {
+          childImageSharp {
+            sizes(maxWidth: 1000) {
+              ...GatsbyImageSharpSizes_tracedSVG
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Styled.Container>
+        <Styled.Background>
+          <Styled.ImgContainer>
+            <Styled.Img
+              sizes={data.profilePic.childImageSharp.sizes}
+              alt="Ben Holmes self portrait (hand sketch)"
+            />
+          </Styled.ImgContainer>
+        </Styled.Background>
+        <Styled.Title>
+          <Styled.Name />
+        </Styled.Title>
+        <Styled.Content>
+          <Styled.MissionStatement>
+            A student developer with a passion for the web.
+          </Styled.MissionStatement>
+          {links.map((link, index) => (
+            <Styled.Icon
+              key={index}
+              href={link.href}
+              name={link.name}
+              text={link.text}
+              initialColor="gray95"
+              size="2em"
+            />
+          ))}
+          <MoreButton>More about me</MoreButton>
+        </Styled.Content>
+      </Styled.Container>
+    )}
+  />
 )
 
 export default Header
-
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "profile-sketch-dark.png" }) {
-      childImageSharp {
-        sizes(maxWidth: 1000) {
-          ...GatsbyImageSharpSizes_tracedSVG
-        }
-      }
-    }
-  }
-`

@@ -13,8 +13,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        path: `${__dirname}/static`,
         name: 'static',
-        path: path.join(__dirname, 'static'),
       },
     },
   ],

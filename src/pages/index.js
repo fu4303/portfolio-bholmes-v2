@@ -5,7 +5,6 @@ import BackgroundTitle from '../components/backgroundTitle'
 import Header from '../components/header'
 import styled, { css } from 'styled-components'
 import Layout from '../components/layout'
-import { graphql } from 'gatsby'
 
 const Styled = {
   SectionContainer: styled.div`
@@ -24,38 +23,33 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <Header data={this.props.data} />
-        <Container
-          render={sections =>
-            sections.map((section, index) => (
-              <Styled.SectionContainer
-                key={index}
-                backingColor={section.backingColor}
-              >
-                <BackgroundTitle text={section.title} />
-                {section.content.map((content, index) => (
-                  <Content
-                    data={this.props.data}
-                    key={index}
-                    {...content}
-                    usePatternBacking={index % 2 === 1}
-                    textColor={section.textColor}
-                  />
-                ))}
-              </Styled.SectionContainer>
-            ))
-          }
-        />
+        <React.Fragment>
+          <Header data={this.props.data} />
+          <Container
+            render={sections =>
+              sections.map((section, index) => (
+                <Styled.SectionContainer
+                  key={index}
+                  backingColor={section.backingColor}
+                >
+                  <BackgroundTitle text={section.title} />
+                  {section.content.map((content, index) => (
+                    <Content
+                      data={this.props.data}
+                      key={index}
+                      {...content}
+                      usePatternBacking={index % 2 === 1}
+                      textColor={section.textColor}
+                    />
+                  ))}
+                </Styled.SectionContainer>
+              ))
+            }
+          />
+        </React.Fragment>
       </Layout>
     )
   }
 }
 
 export default IndexPage
-
-export const query = graphql`
-  query IndexPageQuery {
-    ...HeaderFragment
-    ...ContentFragment
-  }
-`

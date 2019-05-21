@@ -2,20 +2,37 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Icon from '../icon'
 import Styled from './styles'
+import { StaticQuery, graphql } from 'gatsby'
 
-class Content extends React.Component {
-  render() {
-    const {
-      title,
-      summary,
-      links,
-      colors,
-      usePatternBacking,
-      textColor,
-      data,
-      img,
-    } = this.props
-    return (
+const Content = ({
+  title,
+  summary,
+  links,
+  colors,
+  usePatternBacking,
+  textColor,
+  img,
+}) => (
+  <StaticQuery
+    query={graphql`
+      query {
+        snagImage: file(relativePath: { eq: "Snag-sketch.png" }) {
+          childImageSharp {
+            sizes(maxWidth: 600) {
+              ...GatsbyImageSharpSizes_tracedSVG
+            }
+          }
+        }
+        gdgImage: file(relativePath: { eq: "GDG-sketch.png" }) {
+          childImageSharp {
+            sizes(maxWidth: 600) {
+              ...GatsbyImageSharpSizes_tracedSVG
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
       <Styled.Container usePatternBacking={usePatternBacking}>
         {img && (
           <Styled.Img
@@ -48,9 +65,9 @@ class Content extends React.Component {
           </Styled.Summary>
         </Styled.TextContainer>
       </Styled.Container>
-    )
-  }
-}
+    )}
+  />
+)
 
 Content.propTypes = {
   title: PropTypes.string.isRequired,
@@ -63,22 +80,3 @@ Content.propTypes = {
 }
 
 export default Content
-
-export const query = graphql`
-  query {
-    snagImage: file(relativePath: { eq: "Snag-sketch.png" }) {
-      childImageSharp {
-        sizes(maxWidth: 600) {
-          ...GatsbyImageSharpSizes_tracedSVG
-        }
-      }
-    }
-    gdgImage: file(relativePath: { eq: "GDG-sketch.png" }) {
-      childImageSharp {
-        sizes(maxWidth: 600) {
-          ...GatsbyImageSharpSizes_tracedSVG
-        }
-      }
-    }
-  }
-`

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
-import './globalStyles'
+import GlobalStyles from './globalStyles'
 
 const theme = {
   gray10: 'hsla(0, 0%, 10%, 1)',
@@ -25,7 +25,7 @@ const theme = {
   },
 }
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -45,6 +45,7 @@ const Layout = ({ children, data }) => (
             { name: 'keywords', content: 'portfolio, CS' },
           ]}
         />
+        <GlobalStyles />
         <ThemeProvider theme={theme}>{children}</ThemeProvider>
       </React.Fragment>
     )}
@@ -56,13 +57,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`

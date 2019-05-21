@@ -1,6 +1,6 @@
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
-injectGlobal`
+export default createGlobalStyle`
   @font-face {
   font-family: Avenir-Black;
   src: url("/fonts/Avenir-Black.ttf");
@@ -40,4 +40,5 @@ injectGlobal`
   margin: 0;
   font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 20px;
+  }
 `
