@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
+import { StaticQuery, graphql } from 'gatsby'
 import './globalStyles'
 
 const theme = {
@@ -25,18 +26,29 @@ const theme = {
 }
 
 const Layout = ({ children, data }) => (
-  <React.Fragment>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Benjamin Holmes Portfolio' },
-        { name: 'keywords', content: 'portfolio, CS' },
-      ]}
-    />
-    <ThemeProvider theme={theme}>
-      {children()}
-    </ThemeProvider>
-  </React.Fragment>
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `}
+    render={data => (
+      <React.Fragment>
+        <Helmet
+          title={data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: 'Benjamin Holmes Portfolio' },
+            { name: 'keywords', content: 'portfolio, CS' },
+          ]}
+        />
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </React.Fragment>
+    )}
+  />
 )
 
 Layout.propTypes = {

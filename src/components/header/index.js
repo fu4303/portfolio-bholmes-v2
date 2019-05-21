@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import Icon from '../../components/icon'
 import Name from './name'
 import MoreButton from './moreButton'
+import { graphql } from 'gatsby'
 
 const Styled = {
   Container: styled.div`
@@ -23,11 +24,14 @@ const Styled = {
   `,
   Background: styled.div`
     position: absolute;
-    top: 0; left: 10%; right: 0; bottom: 0;
+    top: 0;
+    left: 10%;
+    right: 0;
+    bottom: 0;
     overflow: hidden;
   `,
   ImgContainer: styled.div`
-    background-image: url("/brush-stroke-mint.png");
+    background-image: url('/brush-stroke-mint.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: bottom;
@@ -47,7 +51,7 @@ const Styled = {
         transform: rotate(-5deg);
         opacity: 1;
       }
-    };
+    }
   `,
   Img: styled(Img)`
     height: 90%;
@@ -93,7 +97,7 @@ const Styled = {
   `,
   Icon: styled(Icon)`
     margin-bottom: 2em;
-  `
+  `,
 }
 
 const links = [
@@ -111,23 +115,35 @@ const links = [
     text: 'LinkedIn',
     name: 'logoLinkedin',
     href: 'https://www.linkedin.com/in/benjamin-holmes-706baa151/',
-  }
+  },
 ]
 
 const Header = ({ data }) => (
   <Styled.Container>
     <Styled.Background>
       <Styled.ImgContainer>
-        <Styled.Img sizes={data.profileImage.childImageSharp.sizes} alt="Ben Holmes self portrait (hand sketch)" />
+        <Styled.Img
+          sizes={data.file.childImageSharp.sizes}
+          alt="Ben Holmes self portrait (hand sketch)"
+        />
       </Styled.ImgContainer>
     </Styled.Background>
     <Styled.Title>
       <Styled.Name />
     </Styled.Title>
     <Styled.Content>
-      <Styled.MissionStatement>A student developer with a passion for the web.</Styled.MissionStatement>
+      <Styled.MissionStatement>
+        A student developer with a passion for the web.
+      </Styled.MissionStatement>
       {links.map((link, index) => (
-        <Styled.Icon key={index} href={link.href} name={link.name} text={link.text} initialColor="gray95" size="2em" />
+        <Styled.Icon
+          key={index}
+          href={link.href}
+          name={link.name}
+          text={link.text}
+          initialColor="gray95"
+          size="2em"
+        />
       ))}
       <MoreButton>More about me</MoreButton>
     </Styled.Content>
@@ -137,8 +153,8 @@ const Header = ({ data }) => (
 export default Header
 
 export const query = graphql`
-  fragment HeaderFragment on RootQueryType {
-    profileImage: file(relativePath: { eq: "profile-sketch-dark.png" }) {
+  query {
+    file(relativePath: { eq: "profile-sketch-dark.png" }) {
       childImageSharp {
         sizes(maxWidth: 1000) {
           ...GatsbyImageSharpSizes_tracedSVG
