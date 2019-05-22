@@ -122,7 +122,7 @@ const links = [
     href: 'https://dev.to/bholmesdev',
   },
   {
-    text: 'Looking professional',
+    text: 'Get professional',
     name: 'logoLinkedin',
     href: 'https://www.linkedin.com/in/benjamin-holmes-706baa151/',
   },
