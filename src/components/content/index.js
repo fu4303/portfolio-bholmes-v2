@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Icon from '../icon'
+import { IconLink } from '../icon'
 import Styled from './styles'
 import { StaticQuery, graphql } from 'gatsby'
 
@@ -51,7 +51,7 @@ const Content = ({
             )}
             {links &&
               links.map((link, index) => (
-                <Icon key={index} name={link.icon} href={link.href} />
+                <IconLink key={index} name={link.icon} href={link.href} />
               ))}
             {usePatternBacking && (
               <Styled.GradientLine

@@ -41,4 +41,13 @@ export default createGlobalStyle`
   font-family: Avenir, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 20px;
   }
+  
+  a {
+    color: inherit;
+    text-decoration-style: dotted;
+    cursor: pointer;
+  }
+  a:hover {
+    opacity: 0.9;
+  }
 `

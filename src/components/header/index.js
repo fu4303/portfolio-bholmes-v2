@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import Icon from '../../components/icon'
+import { IconLink } from '../../components/icon'
 import Name from './name'
 import MoreButton from './moreButton'
+import NewSiteAlert from './newSiteAlert'
 import { StaticQuery, graphql } from 'gatsby'
 
 const Styled = {
@@ -13,21 +14,25 @@ const Styled = {
     position: relative;
     background: ${props => props.theme.gray10};
     box-shadow: 0 0 2em ${props => props.theme.gray10};
-    padding: 0 10%;
-    padding-bottom: 5em;
+    padding: 0 5% 5rem 5%;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     z-index: 10;
+    font-size: 1.3rem;
+
+    @media (max-width: 45rem) {
+      font-size: 1rem;
+    }
   `,
   Background: styled.div`
     position: absolute;
     top: 0;
     left: 10%;
     right: 0;
-    bottom: 0;
+    height: 100vh;
     overflow: hidden;
   `,
   ImgContainer: styled.div`
@@ -95,24 +100,29 @@ const Styled = {
     margin-bottom: 2em;
     color: ${props => props.theme.gray70};
   `,
-  Icon: styled(Icon)`
+  Link: styled(IconLink)`
     margin-bottom: 2em;
   `,
 }
 
 const links = [
   {
-    text: 'GitHub',
+    text: 'Code',
     name: 'logoGithub',
     href: 'https://github.com/Holben888',
   },
   {
-    text: 'Twitter',
+    text: 'Short thoughts',
     name: 'logoTwitter',
     href: 'https://twitter.com/BHolmesDev',
   },
   {
-    text: 'LinkedIn',
+    text: 'Long reads',
+    name: 'logoDevTo',
+    href: 'https://dev.to/bholmesdev',
+  },
+  {
+    text: 'Looking professional',
     name: 'logoLinkedin',
     href: 'https://www.linkedin.com/in/benjamin-holmes-706baa151/',
   },
@@ -149,7 +159,7 @@ const Header = () => (
             A student developer with a passion for the web.
           </Styled.MissionStatement>
           {links.map((link, index) => (
-            <Styled.Icon
+            <Styled.Link
               key={index}
               href={link.href}
               name={link.name}
@@ -160,6 +170,7 @@ const Header = () => (
           ))}
           <MoreButton>More about me</MoreButton>
         </Styled.Content>
+        <NewSiteAlert />
       </Styled.Container>
     )}
   />

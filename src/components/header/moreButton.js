@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Icon from '../icon'
+import { Icon } from '../icon'
 
 const Styled = {
   Button: styled.button`
@@ -9,7 +9,6 @@ const Styled = {
     display: flex;
     align-items: center;
     font-size: inherit;
-    
   `,
   Text: styled.span`
     font-size: 1.8em;
@@ -22,7 +21,8 @@ const Styled = {
     animation: jiggle 2s infinite;
 
     @keyframes jiggle {
-      0%, 100% {
+      0%,
+      100% {
         transform: translateY(-0.3em);
       }
       50% {
@@ -35,9 +35,7 @@ const Styled = {
 const MoreButton = ({ children }) => (
   <Styled.Button disabled={true}>
     <Styled.Icon name="arrowDownCallToAction" initialColor="mint" size="4em" />
-    <Styled.Text>
-      {children}
-    </Styled.Text>
+    <Styled.Text>{children}</Styled.Text>
   </Styled.Button>
 )
 
