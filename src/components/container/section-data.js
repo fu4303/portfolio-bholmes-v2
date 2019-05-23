@@ -150,10 +150,10 @@ export default [
             my own pet projects of course). The club is only 12 members strong
             but full of fire, working to ideate, design, produce, and eventually
             market it's first ever board game: <i>Escape to Ellysium</i>. The
-            concept is still in its early stages of play tests, so to get more
-            members to push the project harder, the team needed a kicka**
-            website to advertise their passion. I took it as a chance to go
-            crazy, exploring the exotic JS framework{' '}
+            concept is still in its early play test stages, so to get more
+            members to push the project harder/better/faster, the team needed a
+            kicka** website to advertise their passion. I took it as a chance to
+            go crazy, exploring the exotic JS framework{' '}
             <a href="https://svelte.dev">Svelte</a> in the process.
           </>
         ),
@@ -209,41 +209,48 @@ export default [
   },
   {
     title: 'Cool Projects',
+    titleColor: '#026BFF',
     content: [
       {
-        title: 'Chekt + Bullets',
-        titleColor: '#772CE5',
+        title: 'BuildGT Hack - Roombowling',
         summary: (
-          <React.Fragment>
-            As a college student looking for how to make people’s lives easier,
-            I naturally looked to how I organize my schoolwork. Using an iPad
-            note taking app and my phone’s task manager for years, I realized
-            two things: <b>neither</b> were very capable, and they could both
-            work better if they were connected to the same system. That’s where
-            Chekt and Bullets come in, sharing your collections of notes and
-            tasks in one place to help you see everything you need to get done,
-            and all the tools you need to do it. You can{' '}
-            <a href="https://medium.com/p/924a45e1a588/edit">
-              read my quaint proposal
+          <>
+            I've definitely attended{' '}
+            <a href="https://devpost.com/Holben888?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">
+              my fair share of hackathons
             </a>{' '}
-            for more information.
-          </React.Fragment>
+            as a GA Tech student, but this was easily my favorite win. Our
+            team's goal was simple from the start: reserve the Roomba ASAP, wing
+            it from there. Inspired by a childhood classic, Wii Bowling, we
+            decided to create an over-engineered frame of bowling with a Roomba
+            as the ball. Some serious tech was involved: <br />
+            <b>• </b> A Kinect motion camera using <b>Processing lang</b> to
+            detect fallen pins <br />
+            <b>• </b>{' '}
+            <a href="https://twitter.com/BHolmesDev/status/1102254956973826048">
+              A webapp running on Svelte and web sockets{' '}
+            </a>{' '}
+            for gameplay instructions and classic bowling alley animations{' '}
+            <br />
+            <b>• </b> A Raspberry Pi to host a <b>Python server</b> so
+            everything could communicate with each other <br />
+          </>
         ),
         colors: {
-          primary: '#772CE5',
-          secondary: '#F6D72E',
+          primary: '#026BFF',
+          secondary: '#01E1FF',
         },
         links: [
           {
-            href:
-              'https://xd.adobe.com/spec/fe7e41eb-e355-4918-6370-28a5f32af2a0-884f/',
-            icon: 'logoAdobe',
-          },
-          {
-            href: 'https://github.com/Holben888/Chekt',
+            href: 'https://github.com/Holben888/roombowling-game-display',
             icon: 'logoGithub',
           },
         ],
+        mainLink: {
+          text: 'Experience the suck-iest game of bowling 🎳',
+          href: 'https://devpost.com/software/roomballing',
+          color: '#ffffff',
+        },
       },
       {
         title: 'Microsoft Hack Productivity',
