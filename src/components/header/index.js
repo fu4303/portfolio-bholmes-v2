@@ -98,7 +98,7 @@ const Styled = {
     font-family: ${props => props.theme.headerOblique.fontFamily};
     font-weight: normal;
     margin-bottom: 2em;
-    color: ${props => props.theme.gray70};
+    color: ${props => props.theme.gray95};
   `,
   Link: styled(IconLink)`
     margin-bottom: 2em;

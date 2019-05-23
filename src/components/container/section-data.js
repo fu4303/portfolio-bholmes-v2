@@ -100,6 +100,78 @@ export default [
     textColor: '#eee',
     content: [
       {
+        title: 'Bits of Good',
+        summary: (
+          <>
+            <b>Current role:</b> Executive Director of Engineering <br />
+            <br /> The <a href="https://bitsofgood.org">
+              Bits of Good org
+            </a>{' '}
+            (yes, our website is getting reimagined these next few months 😆)
+            was my first exposure to a team genuinely as excited about web dev
+            as I am. I was tossed into a team lead role my first semester,
+            tasked with getting a long-in-the-making admin web portal for the
+            nonprofit <a href="https://www.drawchange.org">DrawChange</a> to the
+            finish line. It was an amazing first experience working with a
+            client directly, transforming feedback from progress calls into
+            bite-sized GitHub issues for my teammates and myself. Encouraged by
+            helping a nonprofit succeed and seeing the enthusiasm of the club
+            directors, I decided to jump onto the exec board. Currently, I am
+            building a bootcamp curriculum for new members to get fired up
+            working with the <b>MERN stack 🔥</b>
+          </>
+        ),
+        colors: {
+          primary: '#F1DF5A',
+          secondary: '#F08A09',
+        },
+        links: [
+          {
+            href: 'https://github.com/GTBitsOfGood',
+            icon: 'logoGithub',
+          },
+        ],
+        mainLink: {
+          text: 'See my latest updates on BoG',
+          icon: 'logoTwitter',
+          href:
+            'https://twitter.com/search?f=tweets&vertical=default&q=%40bholmesdev%20bits%20of%20good&src=typd',
+        },
+      },
+      {
+        title: 'Golden Swarm Games',
+        summary: (
+          <>
+            <b>Current role:</b> Designer, website maintainer <br />
+            <br /> Getting involved with GSG was my chance to go solo flexing my
+            frontend skills and design sensibilities on an official site (beyond
+            my own pet projects of course). The club is only 12 members strong
+            but full of fire, working to ideate, design, produce, and eventually
+            market it's first ever board game: <i>Escape to Ellysium</i>. The
+            concept is still in its early stages of play tests, so to get more
+            members to push the project harder, the team needed a kicka**
+            website to advertise their passion. I took it as a chance to go
+            crazy, exploring the exotic JS framework{' '}
+            <a href="https://svelte.dev">Svelte</a> in the process.
+          </>
+        ),
+        colors: {
+          primary: '#FFD033',
+          secondary: '#3D56B0',
+        },
+        links: [
+          {
+            href: 'https://github.com/Holben888/gsg-site',
+            icon: 'logoGithub',
+          },
+        ],
+        mainLink: {
+          text: 'Explore the finished product',
+          icon: 'arrowRight',
+          href: 'https://gsg.surge.sh',
+        },
+      },
+      {
         title: 'RoboJackets',
         summary: (
           <React.Fragment>
@@ -118,7 +190,7 @@ export default [
         ),
         colors: {
           primary: '#F1DF5A',
-          secondary: '#f1be5a',
+          secondary: '#F08A09',
         },
         links: [
           {

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { IconLink } from '../icon'
+import { IconLink, Icon } from '../icon'
 import Styled from './styles'
 import { StaticQuery, graphql } from 'gatsby'
 
@@ -8,6 +8,7 @@ const Content = ({
   title,
   summary,
   links,
+  mainLink,
   colors,
   usePatternBacking,
   textColor,
@@ -34,12 +35,13 @@ const Content = ({
     `}
     render={data => (
       <Styled.Container usePatternBacking={usePatternBacking}>
-        {img && (
-          <Styled.Img
-            sizes={data[img.name].childImageSharp.sizes}
-            alt={img.alt}
-          />
-        )}
+        {img &&
+          !usePatternBacking && (
+            <Styled.Img
+              sizes={data[img.name].childImageSharp.sizes}
+              alt={img.alt}
+            />
+          )}
         <Styled.TextContainer rightAlign={usePatternBacking}>
           <Styled.Header color={colors.primary}>{title}</Styled.Header>
           <Styled.LinkContainer>
@@ -63,7 +65,28 @@ const Content = ({
           <Styled.Summary colors={colors} textColor={textColor}>
             {summary}
           </Styled.Summary>
+          {mainLink && (
+            <Styled.MainLinkContainer>
+              <Styled.MainLink colors={colors} href={mainLink.href}>
+                {mainLink.text}
+                {mainLink.icon && (
+                  <Styled.LinkIcon
+                    name={mainLink.icon}
+                    size="1.5rem"
+                    initialColor="gray3"
+                  />
+                )}
+              </Styled.MainLink>
+            </Styled.MainLinkContainer>
+          )}
         </Styled.TextContainer>
+        {img &&
+          usePatternBacking && (
+            <Styled.Img
+              sizes={data[img.name].childImageSharp.sizes}
+              alt={img.alt}
+            />
+          )}
       </Styled.Container>
     )}
   />
