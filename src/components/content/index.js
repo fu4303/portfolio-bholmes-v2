@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { IconLink } from '../icon'
 import ContentImg from './contentImg'
 import Styled from './styles'
-import { StaticQuery, graphql } from 'gatsby'
 
 const Content = ({
   title,
@@ -45,7 +44,7 @@ const Content = ({
             {mainLink.icon && (
               <Styled.LinkIcon
                 name={mainLink.icon}
-                size="1.5rem"
+                size="20px"
                 initialColor="gray3"
               />
             )}
@@ -60,7 +59,7 @@ const Content = ({
 Content.propTypes = {
   title: PropTypes.string.isRequired,
   summary: PropTypes.element.isRequired,
-  links: PropTypes.array.isRequired,
+  links: PropTypes.array,
   colors: PropTypes.object.isRequired,
   rightAlign: PropTypes.bool,
   textColor: PropTypes.string,
