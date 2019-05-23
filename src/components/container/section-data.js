@@ -134,7 +134,7 @@ export default [
           },
         ],
         mainLink: {
-          text: 'See my latest updates on BoG',
+          text: 'See my latest updates',
           icon: 'logoTwitter',
           href:
             'https://twitter.com/search?f=tweets&vertical=default&q=%40bholmesdev%20bits%20of%20good&src=typd',
@@ -168,42 +168,9 @@ export default [
           },
         ],
         mainLink: {
-          text: 'Explore the finished product',
-          icon: 'arrowRight',
+          text: 'Explore the finished product 🚀',
           href: 'https://gsg.surge.sh',
         },
-      },
-      {
-        title: 'RoboJackets',
-        summary: (
-          <React.Fragment>
-            As a new Georgia Tech student, I thought: why not join the biggest
-            computing based club on campus? Joining a club over 100 members
-            strong with 5 competitive divisions, I was a proud contributor to{' '}
-            <b>C++</b> codebase backing project Bigoli, a semi-autonomous RC
-            vehicle that went on to win the{' '}
-            <a href="https://robotracing.wordpress.com/">IARRC</a> this past
-            July. Currently, I’m focusing on behind-the-scenes logistics as a
-            frontend project leader for the{' '}
-            <a href="https://github.com/RoboJackets/onken-web">Onken</a> vendor
-            communication portal. This is being built with{' '}
-            <b>Next + ReactJS frontend</b> and a <b>Django + SQL backend.</b>
-          </React.Fragment>
-        ),
-        colors: {
-          primary: '#F1DF5A',
-          secondary: '#F08A09',
-        },
-        links: [
-          {
-            href: 'https://robojackets.org/',
-            icon: 'link',
-          },
-          {
-            href: 'https://github.com/RoboJackets',
-            icon: 'logoGithub',
-          },
-        ],
       },
     ],
   },
