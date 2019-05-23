@@ -32,7 +32,8 @@ export default [
     ],
   },
   {
-    title: 'Work Experience',
+    title: 'Industry XP',
+    titleColor: '#6916CB',
     content: [
       {
         title: 'Snag',
@@ -96,6 +97,7 @@ export default [
   },
   {
     title: 'Activities',
+    titleColor: '#F1DF5A',
     backingColor: '#444',
     textColor: '#eee',
     content: [
@@ -206,10 +208,11 @@ export default [
     ],
   },
   {
-    title: 'Personal Projects',
+    title: 'Cool Projects',
     content: [
       {
         title: 'Chekt + Bullets',
+        titleColor: '#772CE5',
         summary: (
           <React.Fragment>
             As a college student looking for how to make people’s lives easier,

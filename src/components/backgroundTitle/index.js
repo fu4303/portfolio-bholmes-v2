@@ -21,7 +21,7 @@ const Styled = {
     transform-origin: top right;
     font-family: ${props => props.theme.header.fontFamily};
     color: ${props => props.color || '#000000'};
-    opacity: 0.08;
+    opacity: 0.1;
   `,
 }
 

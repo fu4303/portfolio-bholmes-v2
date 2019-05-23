@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { IconLink, Icon } from '../icon'
+import { IconLink } from '../icon'
 import Styled from './styles'
 import { StaticQuery, graphql } from 'gatsby'
 
@@ -10,7 +10,7 @@ const Content = ({
   links,
   mainLink,
   colors,
-  usePatternBacking,
+  leftAlign,
   textColor,
   img,
 }) => (
@@ -34,32 +34,26 @@ const Content = ({
       }
     `}
     render={data => (
-      <Styled.Container usePatternBacking={usePatternBacking}>
+      <Styled.Container leftAlign={leftAlign}>
         {img &&
-          !usePatternBacking && (
+          !leftAlign && (
             <Styled.Img
               sizes={data[img.name].childImageSharp.sizes}
               alt={img.alt}
             />
           )}
-        <Styled.TextContainer rightAlign={usePatternBacking}>
+        <Styled.TextContainer rightAlign={leftAlign}>
           <Styled.Header color={colors.primary}>{title}</Styled.Header>
           <Styled.LinkContainer>
-            {!usePatternBacking && (
-              <Styled.GradientLine
-                rightAlign={usePatternBacking}
-                colors={colors}
-              />
+            {!leftAlign && (
+              <Styled.GradientLine rightAlign={leftAlign} colors={colors} />
             )}
             {links &&
               links.map((link, index) => (
                 <IconLink key={index} name={link.icon} href={link.href} />
               ))}
-            {usePatternBacking && (
-              <Styled.GradientLine
-                rightAlign={usePatternBacking}
-                colors={colors}
-              />
+            {leftAlign && (
+              <Styled.GradientLine rightAlign={leftAlign} colors={colors} />
             )}
           </Styled.LinkContainer>
           <Styled.Summary colors={colors} textColor={textColor}>
@@ -81,7 +75,7 @@ const Content = ({
           )}
         </Styled.TextContainer>
         {img &&
-          usePatternBacking && (
+          leftAlign && (
             <Styled.Img
               sizes={data[img.name].childImageSharp.sizes}
               alt={img.alt}
@@ -97,7 +91,7 @@ Content.propTypes = {
   summary: PropTypes.element.isRequired,
   links: PropTypes.array.isRequired,
   colors: PropTypes.object.isRequired,
-  usePatternBacking: PropTypes.bool,
+  leftAlign: PropTypes.bool,
   textColor: PropTypes.string,
   data: PropTypes.object,
 }

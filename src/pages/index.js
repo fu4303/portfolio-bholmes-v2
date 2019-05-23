@@ -32,13 +32,16 @@ class IndexPage extends React.Component {
                   key={index}
                   backingColor={section.backingColor}
                 >
-                  <BackgroundTitle text={section.title} />
+                  <BackgroundTitle
+                    text={section.title}
+                    color={section.titleColor}
+                  />
                   {section.content.map((content, index) => (
                     <Content
                       data={this.props.data}
                       key={index}
                       {...content}
-                      usePatternBacking={index % 2 === 1}
+                      leftAlign={index % 2 === 1}
                       textColor={section.textColor}
                     />
                   ))}
