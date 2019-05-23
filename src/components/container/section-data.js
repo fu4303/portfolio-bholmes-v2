@@ -265,13 +265,11 @@ export default [
             </a>{' '}
             I had yet to rekindle this passion in just recently, when our system
             fundamentals class tasked us with creating a game in <b>C</b> using
-            a Game Boy emulator. I could have taken the easy way out and build
-            snake like everyone else, but I knew this was my chance to build
-            something awesome. <br />The end result: a tennis simulator against
-            a CPU skilled enough to send shivers down Serena William's spine. I
-            pushed the emulator to its limits calculating arc velocities,
-            jumpshots, angle characteristics, and match-based scoring. 40+ hours
-            laters, I couldn't be happier with the result!
+            a Game Boy emulator. <br />The end result: a tennis simulator
+            against a CPU skilled enough to send shivers down Serena William's
+            spine. I pushed the emulator to its limits calculating arc
+            velocities, jumpshots, angle characteristics, and match-based
+            scoring. 40+ hours later, I couldn't be happier with the result!
           </>
         ),
         colors: {
