@@ -254,34 +254,45 @@ export default [
         },
       },
       {
-        title: 'Microsoft Hack Productivity',
+        title: '32 Bit Rackets for Game Boy',
         summary: (
-          <React.Fragment>
-            This hackathon stood out in Devpost’s sea of exciting projects
-            because of how open ended it was, letting entrees solve any problem
-            they could think of using Microsoft’s robust APIs. I decided on the{' '}
-            <b>AngularJS + vanilla JS</b> based chrome extension <b>OutLink</b>{' '}
-            to let the user mark up any webpage they wanted and send those notes
-            via OutLook. Using a <b>content script</b> and some sneaky invisible
-            tags to hide markup information in an email, the final app let
-            people with the extension share annotated webpages right from their
-            browser.
-          </React.Fragment>
+          <>
+            Though I've found my niche in frontend dev and design, my interest
+            in programming all started making simple games in Java. I spent my
+            first few years of high school using and abusing Java.Swing to{' '}
+            <a href="https://imgur.com/a/edUgWnK">
+              recreate my favorite titles.
+            </a>{' '}
+            I had yet to rekindle this passion in just recently, when our system
+            fundamentals class tasked us with creating a game in <b>C</b> using
+            a Game Boy emulator. I could have taken the easy way out and build
+            snake like everyone else, but I knew this was my chance to build
+            something awesome. <br />The end result: a tennis simulator against
+            a CPU skilled enough to send shivers down Serena William's spine. I
+            pushed the emulator to its limits calculating arc velocities,
+            jumpshots, angle characteristics, and match-based scoring. 40+ hours
+            laters, I couldn't be happier with the result!
+          </>
         ),
         colors: {
-          primary: '#0179DB',
-          secondary: 'transparent',
+          primary: '#E72832',
+          secondary: '#EBDB2A',
+        },
+        img: {
+          name: 'gbaImage',
+          alt: 'An animated GIF of tennis gameplay',
         },
         links: [
           {
-            href: 'https://devpost.com/software/outlink',
-            icon: 'logoDevpost',
-          },
-          {
-            href: 'https://github.com/Holben888/OutLink',
+            href: 'https://github.com/Holben888/32BitRackets',
             icon: 'logoGithub',
           },
         ],
+        mainLink: {
+          text: 'Demo the AAA title 🎮',
+          href: 'https://gba.zucc.io/',
+          color: '#ffffff',
+        },
       },
     ],
   },
