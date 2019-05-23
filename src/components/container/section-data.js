@@ -219,11 +219,12 @@ export default [
             <a href="https://devpost.com/Holben888?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav">
               my fair share of hackathons
             </a>{' '}
-            as a GA Tech student, but this was easily my favorite win. Our
-            team's goal was simple from the start: reserve the Roomba ASAP, wing
-            it from there. Inspired by a childhood classic, Wii Bowling, we
-            decided to create an over-engineered frame of bowling with a Roomba
-            as the ball. Some serious tech was involved: <br />
+            as a GA Tech student, but{' '}
+            <a href="https://build.hack.gt">BuildGT2</a> was easily my favorite
+            win. Our team's goal was simple from the start: reserve the Roomba
+            ASAP, wing it from there. Inspired by a childhood classic, Wii
+            Bowling, we decided to create an over-engineered frame of bowling
+            with a Roomba as the ball. Some serious tech was involved: <br />
             <b>• </b> A Kinect motion camera using <b>Processing lang</b> to
             detect fallen pins <br />
             <b>• </b>{' '}

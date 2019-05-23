@@ -86,7 +86,7 @@ export default {
     background-color: ${props => props.colors.primary || '#000'};
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    color: ${props => props.theme.gray3};
+    color: ${props => props.textColor || props.theme.gray3};
     text-decoration: none;
     transition: background-color 0.2s;
 

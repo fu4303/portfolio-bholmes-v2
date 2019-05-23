@@ -61,7 +61,11 @@ const Content = ({
           </Styled.Summary>
           {mainLink && (
             <Styled.MainLinkContainer>
-              <Styled.MainLink colors={colors} href={mainLink.href}>
+              <Styled.MainLink
+                colors={colors}
+                textColor={mainLink.color}
+                href={mainLink.href}
+              >
                 {mainLink.text}
                 {mainLink.icon && (
                   <Styled.LinkIcon
