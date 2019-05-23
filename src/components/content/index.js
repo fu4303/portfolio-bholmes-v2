@@ -14,7 +14,7 @@ const Content = ({
   textColor,
   img,
 }) => (
-  <Styled.Container usePatternBacking={!rightAlign}>
+  <Styled.Container usePatternBacking={rightAlign}>
     {img && !rightAlign && <ContentImg {...img} />}
     <Styled.TextContainer rightAlign={rightAlign}>
       <Styled.Header color={colors.primary}>{title}</Styled.Header>
