@@ -17,8 +17,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: ${props => (props.leftAlign ? 'wrap-reverse' : 'wrap')};
-    ${props => props.leftAlign && pattern};
+    flex-wrap: ${props => (!props.usePatternBacking ? 'wrap-reverse' : 'wrap')};
+    ${props => props.usePatternBacking && pattern};
   `,
   Header: styled.h1`
     color: ${props => props.color};

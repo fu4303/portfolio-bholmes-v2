@@ -10,7 +10,7 @@ const Content = ({
   links,
   mainLink,
   colors,
-  leftAlign,
+  rightAlign,
   textColor,
   img,
 }) => (
@@ -34,26 +34,26 @@ const Content = ({
       }
     `}
     render={data => (
-      <Styled.Container leftAlign={leftAlign}>
+      <Styled.Container usePatternBacking={!rightAlign}>
         {img &&
-          !leftAlign && (
+          !rightAlign && (
             <Styled.Img
               sizes={data[img.name].childImageSharp.sizes}
               alt={img.alt}
             />
           )}
-        <Styled.TextContainer rightAlign={leftAlign}>
+        <Styled.TextContainer rightAlign={rightAlign}>
           <Styled.Header color={colors.primary}>{title}</Styled.Header>
           <Styled.LinkContainer>
-            {!leftAlign && (
-              <Styled.GradientLine rightAlign={leftAlign} colors={colors} />
+            {!rightAlign && (
+              <Styled.GradientLine rightAlign={rightAlign} colors={colors} />
             )}
             {links &&
               links.map((link, index) => (
                 <IconLink key={index} name={link.icon} href={link.href} />
               ))}
-            {leftAlign && (
-              <Styled.GradientLine rightAlign={leftAlign} colors={colors} />
+            {rightAlign && (
+              <Styled.GradientLine rightAlign={rightAlign} colors={colors} />
             )}
           </Styled.LinkContainer>
           <Styled.Summary colors={colors} textColor={textColor}>
@@ -75,7 +75,7 @@ const Content = ({
           )}
         </Styled.TextContainer>
         {img &&
-          leftAlign && (
+          rightAlign && (
             <Styled.Img
               sizes={data[img.name].childImageSharp.sizes}
               alt={img.alt}
@@ -91,7 +91,7 @@ Content.propTypes = {
   summary: PropTypes.element.isRequired,
   links: PropTypes.array.isRequired,
   colors: PropTypes.object.isRequired,
-  leftAlign: PropTypes.bool,
+  rightAlign: PropTypes.bool,
   textColor: PropTypes.string,
   data: PropTypes.object,
 }

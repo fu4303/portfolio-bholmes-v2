@@ -41,7 +41,7 @@ class IndexPage extends React.Component {
                       data={this.props.data}
                       key={index}
                       {...content}
-                      leftAlign={index % 2 === 1}
+                      rightAlign={index % 2 === 1}
                       textColor={section.textColor}
                     />
                   ))}
