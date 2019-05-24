@@ -9,20 +9,23 @@ export default [
       {
         title: 'In brief...',
         summary: (
-          <React.Fragment>
+          <>
             I’m a junior <b>Georgia Tech</b> student born and raised in
             Charleston, SC, making my way to the big city of Atlanta to pursue
-            my love of CS. My time here has let me explore every coding venture
-            I’m willing to go after, exploring <b>animated SVGs</b> to{' '}
-            <a href="https://devpost.com/software/hole-blind">
-              VR gaming experiences
-            </a>{' '}
-            and everything in between. Being part of a culture has nerdy as I am
-            certainly helps; I’m never short on advice from other devs or games
-            of Smash Bros to cool off after tough exams. Oh, I also like{' '}
-            <b>charcoal sketching</b> in my spare time, in case you couldn’t
-            tell 🙂
-          </React.Fragment>
+            my love of CS. I dove hard into the hacking culture the second I
+            arrived, entering hackathons and soaking up tech podcasts + blogs to
+            learn every aspect of web development I could. The more I learned,
+            the more my focus landed on the <b>frontend</b>; there's always been
+            something so awesome and rewarding to me about pushing around
+            graphics on a screen. It started with game development in{' '}
+            <b>Java Swing</b> back in high school, expanding past <b>OOP </b>
+            fundamentals to{' '}
+            <a href="https://imgur.com/a/edUgWnK">building remakes</a> of my
+            favorite titles. Soon, through internships and self teaching, I
+            adapted this GUI passion to a new medium: building websites. Now, I
+            use blog posts, Twitter, and clubs as outlets to shout my web dev
+            obsession from the rooftops!
+          </>
         ),
         colors: {
           primary: '#2BFF88',
